@@ -1,0 +1,187 @@
+@import 'global';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+}
+
+nav {
+    background-color: $primary-color;
+    padding: $spacing-unit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .brand {
+        color: $light-color;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: $spacing-unit;
+
+        a {
+            color: $light-color;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            &:hover {
+                background-color: rgba($light-color, 0.1);
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-md) {
+        flex-direction: column;
+        gap: $spacing-unit;
+        
+        ul {
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-unit 0.5rem;
+        
+        .brand {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+main {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
+
+    section {
+        padding: $spacing-unit * 4 0;
+        text-align: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        padding: 0 0.5rem;
+        
+        section {
+            padding: $spacing-unit * 2 0;
+        }
+    }
+}
+
+#hero {
+    background-color: $secondary-color;
+    color: $light-color;
+    padding: $spacing-unit * 8 0;
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: $spacing-unit;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: $breakpoint-lg) {
+        padding: $spacing-unit * 6 0;
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: $breakpoint-md) {
+        padding: $spacing-unit * 4 0;
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-unit * 3 0;
+        h1 {
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-unit * 2;
+    padding: $spacing-unit * 2;
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+        gap: $spacing-unit;
+        padding: $spacing-unit;
+    }
+}
+
+.card {
+    background-color: $light-color;
+    padding: $spacing-unit * 2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h3 {
+        color: $secondary-color;
+        margin-bottom: $spacing-unit;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-unit;
+    }
+}
+
+.cta-button {
+    background-color: $primary-color;
+    color: $light-color;
+    border: none;
+    padding: $spacing-unit $spacing-unit * 2;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        padding: $spacing-unit $spacing-unit;
+        font-size: 1rem;
+    }
+}
+
+footer {
+    background-color: $secondary-color;
+    color: $light-color;
+    text-align: center;
+    padding: $spacing-unit;
+    margin-top: $spacing-unit * 4;
+
+    @media (max-width: $breakpoint-sm) {
+        margin-top: $spacing-unit * 2;
+        padding: $spacing-unit 0.5rem;
+    }
+}
